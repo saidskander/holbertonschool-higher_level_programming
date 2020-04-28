@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-for i in range(97, 123):
-    if i == ord("q") or i == ord("e")
-    continue
-    print(chr(i), end="")
-    print("{:c}".format(i), end="")
+for letter_asc in range(ord('a'), ord('z')+1):
+    x = chr(letter_asc)
+    if x not in "qe":
+    print(x, end='')

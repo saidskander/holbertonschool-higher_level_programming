@@ -8,9 +8,7 @@ def main():
     print("{:d} + {:d} = {:d}".format(a, b, add(a, b)))
 
 if __name__ == "__main__":
-
     main()
-
 # THIS IS ANOTHER EXAMPLE
 
 # if __name__ == "__main__":

@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-recrangle class
+rectangle c lass
 """
 
 

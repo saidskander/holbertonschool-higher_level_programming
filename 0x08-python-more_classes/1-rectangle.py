@@ -1,43 +1,40 @@
 #!/usr/bin/python3
-"""ectangle-c-lass"""
+"""rectangle-c-lass"""
 
 
 class Rectangle:
-    """rectangle"""
-
+    """self-init"""
     def __init__(self, width=0, height=0):
-        """sef init"""
-        if not isinstance(width, int):
-            raise TypeError('width must be an integer')
-        if width < 0:
-            raise ValueError('width must be >= 0')
-        if not isinstance(height, int):
-            raise TypeError('height must be an integer')
-        if height < 0:
-            raise ValueError('height must be >= 0')
-        self.__width = width
-        self.__height = height
-
-    def width(self):
-        """self-getter"""
-        return self.__width
-
-    def width(self, value):
-        """self-setter"""
-        if not isinstance(value, int):
-            raise TypeError('width must be an integer')
-        if value < 0:
-            raise ValueError('width must be >= 0')
-        self.__width = value
+        self.height = height
+        self.width = width
+    """self-height"""
 
     def height(self):
-        """self-getter"""
-        return self.__height
+        return self.height
 
     def height(self, value):
-        """self-setter"""
         if not isinstance(value, int):
-            raise TypeError('height must be an integer')
+            if isinstance(value, float):
+                value = int(value)
+            else:
+                raise TypeError("height must be an integer")
         if value < 0:
-            raise ValueError('height must be >= 0')
-        self.__height = value
+            raise ValueError("height must be >= 0")
+    """self-width"""
+
+    def width(self):
+        return self.width
+
+    def width(self, value):
+        if isinstance(value, int):
+            if value < 0:
+                raise ValueError("width must be >= 0")
+            else:
+                self.value = value
+        elif isinstance(value, float):
+            if value < 0:
+                raise ValueError("width must be >= 0")
+            else:
+                self.value = int(value)
+        else:
+            raise TypeError("width must be an integer")

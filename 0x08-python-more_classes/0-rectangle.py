@@ -1,5 +1,7 @@
 #!/usr/bin/python3
+"""
+Rectangle c lass
+"""
 
-
-class Rectangle:
+class rectangle:
     pass

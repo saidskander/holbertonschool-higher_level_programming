@@ -9,7 +9,6 @@ class Rectangle:
         self.height = height
         self.width = width
     """self-height"""
-
     def height(self):
         return self.height
 
@@ -22,7 +21,6 @@ class Rectangle:
         if value < 0:
             raise ValueError("height must be >= 0")
     """self-width"""
-
     def width(self):
         return self.width
 

@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""lookup func"""
+"""
+lookup func
+
+"""
 
 def lookup(obj):
     """return list of the object"""

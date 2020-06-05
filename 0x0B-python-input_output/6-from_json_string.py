@@ -1,7 +1,4 @@
 #!/usr/bin/python3
-"""json loads"""
-
-
 import json
 
 

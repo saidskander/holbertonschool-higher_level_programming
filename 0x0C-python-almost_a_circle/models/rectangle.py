@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """base import"""
-from models.base import Base
+from .base import Base
 
 
 class Rectangle(Base):
@@ -16,3 +16,12 @@ class Rectangle(Base):
     def width(self):
         """self width"""
         return self.__width
+
+    @width.setter
+    def width(self, value):
+        """self setter width"""
+        if type(value) is not int:
+            raise TypeError('width must be an integer')
+        if value <= 0:
+            raise ValueError('width must be > 0')
+        self.__width = value

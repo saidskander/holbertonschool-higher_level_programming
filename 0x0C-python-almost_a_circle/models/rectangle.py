@@ -84,3 +84,36 @@ class Rectangle(Base):
             for o in range(self.width):
                 print("#", end="")
             print()
+
+    def __str__(self):
+        """ print string """
+        string = (
+                "[Rectangle] (" + str(self.id) +
+                ") " +
+                str(self.x) + "/" +
+                str(self.y) + " - " +
+                str(self.width) +
+                "/" +
+                str(self.height)
+                )
+        return (string)
+
+    def update(self, *args, **kwargs):
+        """ update with args and kwargs """
+        if args:
+            i = ['id', 'height', 'width', 'x', 'y']
+            for arg in range(len(args)):
+                setattr(self, i[arg], args[arg])
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
+    def to_dictionary(self):
+        """ dictionary """
+        dict = dict()
+        dict['id'] = self.id
+        dict['height'] = self.height
+        dict['width'] = self.width
+        dict['y'] = self.y
+        dict['x'] = self.x
+        return dict

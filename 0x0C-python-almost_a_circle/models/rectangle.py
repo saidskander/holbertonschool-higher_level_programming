@@ -31,4 +31,4 @@ class Rectangle(Base):
             if width <= 0:
                 raise ValueError("width must be > 0")
         elif type(width) is int and width > 0:
-            self.__width = 
+            self.__width = width

@@ -31,15 +31,15 @@ class Square(Rectangle):
     def update(self, *args, **kwargs):
         """update"""
         if len(args):
-            for i, a in enumerate(args):
-                if i == 0:
-                    self.id = a
-                elif i == 1:
-                    self.size = a
-                elif i == 2:
-                    self.x = a
-                elif i == 3:
-                    self.y = a
+            for x, l in enumerate(args):
+                if x == 0:
+                    self.id = l
+                elif x == 1:
+                    self.size = l
+                elif x == 2:
+                    self.x = l
+                elif x == 3:
+                    self.y = l
         else:
             if "id" in kwargs:
                 self.id = kwargs["id"]
@@ -52,9 +52,9 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         """dictionary square"""
-        d = {}
-        d["id"] = self.id
-        d["size"] = self.size
-        d["y"] = self.y
-        d["x"] = self.x
-        return d
+        m = {}
+        m["id"] = self.id
+        m["size"] = self.size
+        m["y"] = self.y
+        m["x"] = self.x
+        return m

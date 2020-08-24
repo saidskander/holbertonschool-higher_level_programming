@@ -6,7 +6,9 @@
 import urllib.request
 import urllib.error
 from sys import argv
-
+from urllib.request import urlopen
+from urllib.parse import urlencode
+from urllib.error import HTTPError
 
 if __name__ == "__main__":
     try:

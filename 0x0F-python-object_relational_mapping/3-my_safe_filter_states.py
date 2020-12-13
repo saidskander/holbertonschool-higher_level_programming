@@ -1,29 +1,35 @@
 #!/usr/bin/python3
-"""Script that lists all states from database hbtn_0e_0_usa"""
+"""Display name argument of states table"""
 import MySQLdb
 import sys
 
 
 def filter_names_safe():
-    """list argv from database
+    """Takes arguments argv to list from database
+    Only lists with states that matches name argument
+    Arguments:
+        argv[1]: mysql username
+        argv[2]: mysql password
+        argv[3]: database name
+        argv[4]: state name
     """
     if len(sys.argv) == 5:
-        database = MySQLdb.connect(host="localhost",
-                                   port=3306,
-                                   user=sys.argv[1],
-                                   passwd=sys.argv[2],
-                                   database=sys.argv[3])
+        db = MySQLdb.connect(host="localhost",
+                             port=3306,
+                             user=sys.argv[1],
+                             passwd=sys.argv[2],
+                             db=sys.argv[3])
 
-        crsr = database.cursor()
+        cur = db.cursor()
 
-        crsr.execute("SELECT * FROM states WHERE BINARY name='{:s}'\
-                     ORDER BY id ASC".format(sys.argv[4]))
-        row = crsr.fetchall()
-        for x in row:
-            print(x)
+        cur.execute("SELECT * FROM states WHERE BINARY name='{:s}'\
+                    ORDER BY id ASC".format(sys.argv[4]))
+        rows = cur.fetchall()
+        for i in rows:
+            print(i)
 
-        crsr.close()
-        database.close()
+        cur.close()
+        db.close()
     else:
         return
 

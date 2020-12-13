@@ -8,12 +8,13 @@ def get_states():
     """argv arguments to list from SQL_database
        username, password, name, state name searched.
     """
+
     if len(sys.argv) == 6:
-    database = MySQLdb.connect(host="localhost",
-                               port=3306,
-                               user=sys.argv[1],
-                               passwd=sys.argv[2],
-                               database=sys.argv[3])
+        database = MySQLdb.connect(host="localhost",
+                                   port=3306,
+                                   user=sys.argv[1],
+                                   passwd=sys.argv[2],
+                                   database=sys.argv[3])
 
     crsr = database.cursor()
     crsr.execute("SELECT * FROM states WHERE BINARY name='{:s}'\

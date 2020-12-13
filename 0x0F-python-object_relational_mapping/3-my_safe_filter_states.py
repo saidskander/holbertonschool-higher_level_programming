@@ -4,7 +4,7 @@ import MySQLdb
 import sys
 
 
-def get_states():
+def filter_names_safe():
     """argv arguments to list from SQL_database
        username, password, name, state name searched.
     """
@@ -29,4 +29,4 @@ def get_states():
         return
 
 if __name__ == "__main__":
-    get_states()
+    filter_names_safe():

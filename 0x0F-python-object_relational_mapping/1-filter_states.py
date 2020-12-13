@@ -16,7 +16,9 @@ def get_states():
 
     cursr = database.cursor()
 
-    cursr.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id")
+    cursr.execute(
+                  "SELECT * FROM states WHERE name BINARY 'N%' ORDER BY id"
+                  )
     row = cursr.fetchall()
     for x in row:
         print(x)

@@ -14,8 +14,9 @@ def get_states():
                                passwd=sys.argv[2],
                                database=sys.argv[3])
 
-    cursr = database.cursor()
-    crsr.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id")
+    crsr = database.cursor()
+    crsr.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id"
+                 )
     row = crsr.fetchall()
     for x in row:
         print(x)

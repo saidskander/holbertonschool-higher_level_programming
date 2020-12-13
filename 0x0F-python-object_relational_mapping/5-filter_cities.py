@@ -18,7 +18,6 @@ if __name__ == '__main__':
                   WHERE states.name LIKE BINARY %s\
                   ORDER BY cities.id ASC", (sys.argv[4],))
     row = crsr.fetchall()
-    for x in row:
-        print(x)
+    print(', '.join([x[0] for x in row]))
     crsr.close()
     database.close()

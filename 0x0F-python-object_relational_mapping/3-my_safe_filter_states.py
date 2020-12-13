@@ -16,12 +16,12 @@ def get_states():
                                    passwd=sys.argv[2],
                                    database=sys.argv[3])
 
-    crsr = database.cursor()
-    crsr.execute("SELECT * FROM states WHERE BINARY name='{:s}'\
-                 ORDER BY id ASC".format(sys.argv[4]))
-    row = crsr.fetchall()
-    for x in row:
-        print(x)
+        crsr = database.cursor()
+        crsr.execute("SELECT * FROM states WHERE BINARY name='{:s}'\
+                      ORDER BY id ASC".format(sys.argv[4]))
+        row = crsr.fetchall()
+        for x in row:
+            print(x)
 
     crsr.close()
     database.close()

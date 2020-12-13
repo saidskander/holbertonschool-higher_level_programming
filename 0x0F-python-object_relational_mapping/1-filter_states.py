@@ -15,15 +15,13 @@ def get_states():
                                database=sys.argv[3])
 
     cursr = database.cursor()
-
-    cursr.execute(
-                  "SELECT * FROM states WHERE name BINARY 'N%' ORDER BY id"
-                  )
-    row = cursr.fetchall()
+    crsr.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id"
+                 )
+    row = crsr.fetchall()
     for x in row:
         print(x)
 
-    cursr.close()
+    crsr.close()
     database.close()
 
 if __name__ == "__main__":

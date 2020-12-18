@@ -6,11 +6,11 @@ from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
-    database = create_engine(
+    db = create_engine(
         "mysql+mysqldb://{}:{}@localhost/{}".format(argv[1], argv[2], argv[3]),
         pool_pre_ping=True)
-    Base.metadata.create_all(database)
-    Session = sessionmaker(bind=database)
+    Base.metadata.create_all(db)
+    Session = sessionmaker(bind=db)
     # Session
     ses = Session()
     # input state query

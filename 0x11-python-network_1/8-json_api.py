@@ -3,6 +3,7 @@
     sends a request to the URL
     and displays the body of the response. """
 
+
 if __name__ == '__main__':
     import requests
     from sys import argv
@@ -10,6 +11,7 @@ if __name__ == '__main__':
         q = argv[1]
     else:
         q = ""
+
     r = requests.post('http://0.0.0.0:5000/search_user', data={'q': q})
     try:
         requests_dict = r.json()
